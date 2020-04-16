@@ -3,11 +3,12 @@ require_relative 'message_filter'
 describe MessageFilter, 'wit argument "foo"' do
 	before do
 		@filter = MessageFilter.new('foo')
-	end
+  end
+  subject { @filter }
 	it {
-    expect(@filter).to be_detect('hello from foo')
+    is_expected.to be_detect('hello from foo')
   }
 	it {
-		expect(@filter).not_to be_detect('hello, world!')
+		is_expected.not_to be_detect('hello, world!')
   }
 end
