@@ -12,7 +12,7 @@ describe MessageFilter do
     subject { MessageFilter.new('foo') }
     it_behaves_like 'MessageFilter with argument "foo"'
     it { expect(subject.ng_words).to have(1).item }
-    its(:ng_words) { is_expected.to have(1).item }
+    it { is_expected.to have(1).ng_words }
   end
   context 'with argument "foo","bar"' do
     subject { MessageFilter.new('foo', 'bar') }
