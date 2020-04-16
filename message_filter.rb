@@ -1,12 +1,10 @@
 class MessageFilter
 	def initialize(*words)
-		@words = words
+		@ng_words = words
 	end
+	attr_reader :ng_words
 	def detect?(text)
-		@words.each do |w|
-			return true if text.include?(w)
-		end
-		false
+		@ng_words.any?{|w| text.include?(w) }
 	end
 end
 
